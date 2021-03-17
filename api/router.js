@@ -1,6 +1,6 @@
 'use trict'
 
-const palindrome = require('./palindrome/network');
+const palindrome = require('./components/palindrome/network');
 
 const router = (app) => {
   app.use('/iecho', palindrome);
