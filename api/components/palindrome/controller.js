@@ -5,7 +5,7 @@ class Controller {
   isPalindrome({ text }) {
     return new Promise((resolve, reject) => {
       if (!text) {
-        reject('no text');
+        reject(new Error('no text'));
       }
 
       // Instrucción para revertir el texto

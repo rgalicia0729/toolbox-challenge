@@ -8,7 +8,7 @@ const success = ({ res, data, status }) => {
 // Response si hay algun error
 const error = ({ res, err, status }) => {
   console.error('[Error]:', err);
-  const message = err || 'Server error';
+  const message = err.message || 'Server error';
 
   if (!status) {
     status = err.statusCode || 500;

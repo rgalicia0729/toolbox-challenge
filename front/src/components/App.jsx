@@ -1,10 +1,15 @@
 import React from 'react';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import TextForm from './FormOfText';
+import ListOfText from './ListOfText';
+
 const App = () => {
   return (
-    <div>
-      <h1>First component</h1>
-    </div>
+    <>
+      <TextForm />
+      <ListOfText />
+    </>
   );
 };
 
