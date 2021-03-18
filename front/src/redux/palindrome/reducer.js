@@ -10,8 +10,8 @@ export const palindromeReducer = (state = initialState, action) => {
       return {
         ...state,
         texts: [
-          ...state.texts,
-          action.payload
+          action.payload,
+          ...state.texts
         ]
       }
 

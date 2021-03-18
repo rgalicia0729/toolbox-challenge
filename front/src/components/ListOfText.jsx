@@ -11,7 +11,7 @@ const ListOfText = ({ palindrome }) => {
         <div className="card">
           <div className="card-body">
             {
-              palindrome.texts.reverse().map((text) => (
+              palindrome.texts.map((text) => (
                 <InputOfText {...text} />
               ))
             }
