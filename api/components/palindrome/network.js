@@ -3,7 +3,7 @@
 const { Router } = require('express');
 
 const { Controller } = require('./controller');
-const { success, error } = require('../network/response');
+const { success, error } = require('../../network/response');
 
 const controller = new Controller();
 const router = Router();
