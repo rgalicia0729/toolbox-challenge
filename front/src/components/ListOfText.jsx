@@ -12,7 +12,7 @@ const ListOfText = ({ palindrome }) => {
           <div className="card-body">
             {
               palindrome.texts.map((text) => (
-                <InputOfText {...text} />
+                <InputOfText key={text.text} {...text} />
               ))
             }
           </div>

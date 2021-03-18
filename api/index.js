@@ -17,7 +17,7 @@ app.listen(env.PORT, (err) => {
   if (err) {
     console.error(err.message);
   } else {
-    console.log(`API listening on: ${env.PORT}`);
+    console.log(`API listening on: http://127.0.0.1:${env.PORT}`);
   }
 });
 

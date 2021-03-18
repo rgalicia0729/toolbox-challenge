@@ -5,17 +5,15 @@ const initialState = {
 }
 
 export const palindromeReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case types.SET_TEXT:
-      return {
-        ...state,
-        texts: [
-          action.payload,
-          ...state.texts
-        ]
-      }
 
-    default:
-      return state
+  if (action.type === types.SET_TEXT) {
+    state.texts.unshift(action.payload);
+
+    return {
+      ...state,
+      texts: state.texts
+    };
   }
+
+  return state;
 }

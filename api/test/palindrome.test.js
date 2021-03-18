@@ -10,6 +10,18 @@ const app = require('../index');
  */
 describe('/iecho?text=test', () => {
   /**
+   * Valida que al no enviar un texto responda con un 400 y con un error: no text
+   */
+  it('Respond with json containing, {error: no text} with status code 400', async () => {
+    const response = await request(app).get('/iecho?text=');
+
+    expect(response.status).to.eql(400);
+    expect(response.body).to.eql({
+      error: 'no text'
+    });
+  });
+
+  /**
    * Valida que el endpoint responda con un JSON
    */
   it('Respond with json containing', (done) => {
@@ -17,19 +29,6 @@ describe('/iecho?text=test', () => {
       .get('/iecho?text=test')
       .expect('Content-type', /json/)
       .expect(200, done);
-  });
-
-  /**
-   * Valida que el texto enviado sea un palindromo
-   */
-  it('Respond with json containing, but with the text is palindrome', async () => {
-    const response = await request(app).get('/iecho?text=oso');
-
-    expect(response.status).to.eql(200);
-    expect(response.body).to.eql({
-      text: 'oso',
-      palindrome: true
-    });
   });
 
   /**
@@ -46,14 +45,15 @@ describe('/iecho?text=test', () => {
   });
 
   /**
-   * Valida que al no enviar un texto responda con un 200 y con un error: no text
+   * Valida que el texto enviado sea un palindromo
    */
-  it('Respond with json containing, {error: no text} with status code 400', async () => {
-    const response = await request(app).get('/iecho?text=');
+  it('Respond with json containing, but with the text is palindrome', async () => {
+    const response = await request(app).get('/iecho?text=oso');
 
-    expect(response.status).to.eql(400);
+    expect(response.status).to.eql(200);
     expect(response.body).to.eql({
-      error: 'no text'
+      text: 'oso',
+      palindrome: true
     });
   });
 });

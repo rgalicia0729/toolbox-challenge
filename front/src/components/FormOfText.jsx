@@ -12,14 +12,19 @@ const FormOfText = ({ sendText }) => {
   }
 
   // Ejecuta la acción para enviar el texto al servidor
-  const enviarText = () => {
-    sendText(text);
-    setText('');
+  const enviarText = (event) => {
+    event.preventDefault();
+
+    if (text.trim()) {
+      sendText(text);
+      setText('');
+    }
+
   }
 
   return (
     <nav className="navbar navbar-light bg-light">
-      <form className="container-fluid">
+      <form onSubmit={enviarText} className="container-fluid">
         <div className="input-group">
           <span className="input-group-text" id="basic-addon1">Ingresa un texto</span>
           <input
@@ -33,8 +38,7 @@ const FormOfText = ({ sendText }) => {
 
           <button
             className="btn btn-outline-success"
-            type="button"
-            onClick={enviarText}
+            type="submit"
           >Send</button>
         </div>
       </form>

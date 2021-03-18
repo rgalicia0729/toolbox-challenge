@@ -12,8 +12,9 @@ export const sendText = (text) => {
   return (dispatch) => {
     axios.get(`http://localhost:3000/iecho?text=${text}`)
       .then(({ data }) => {
-        console.log(data);
         dispatch(setText(data));
+      }).catch((err) => {
+        console.error(err.message);
       });
   }
 }
