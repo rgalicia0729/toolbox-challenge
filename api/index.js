@@ -20,3 +20,5 @@ app.listen(env.PORT, (err) => {
     console.log(`API listening on: ${env.PORT}`);
   }
 });
+
+module.exports = app;
