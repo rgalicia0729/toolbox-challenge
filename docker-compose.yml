@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   api:
-    build: ./api
+    image: rgalicia0729/toolbox-challenge-api
     environment:
       PORT: 3000
     depends_on:
@@ -10,7 +10,7 @@ services:
     ports:
       - "3000:3000"
 
-  front:
-    build: ./front
+  front: 
+    image: rgalicia0729/toolbox-challenge-front
     ports:
       - "3001:3001"

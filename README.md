@@ -21,7 +21,7 @@ Estando en el directorio de api, ejecutamos el siguiente comando
 
     $ npm start
 
-    Si todo sale bien muestra el siguiente mensaje: **API listening on: http://127.0.0.1:3000**
+Si todo sale bien muestra el siguiente mensaje: **API listening on: http://127.0.0.1:3000**
 
 Para ejecutar los test utiliza el siguiente comando
 
@@ -37,7 +37,7 @@ Estando en el directorio de front, ejecutamos el siguiente comando
 
     $ npm start
 
-    Si todo sale bien en la consola debe de existir el siguiente mensaje: **Project is running at http://0.0.0.0:3001/**
+Si todo sale bien en la consola debe de existir el siguiente mensaje: **Project is running at http://0.0.0.0:3001/**
 
 Abre un navegador e ingresa al siguiente enlace **http://0.0.0.0:3001/**.
 
